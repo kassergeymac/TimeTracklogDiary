@@ -13,6 +13,9 @@
 		904400D520C97E27009A11C1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904400D320C97E27009A11C1 /* MainMenu.xib */; };
 		904400E120C97E28009A11C1 /* TimeTracklogDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904400E020C97E28009A11C1 /* TimeTracklogDiaryTests.swift */; };
 		904400EC20C97E28009A11C1 /* TimeTracklogDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904400EB20C97E28009A11C1 /* TimeTracklogDiaryUITests.swift */; };
+		90B38F0A20C995C600C4992B /* IntervalSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B38F0820C995C600C4992B /* IntervalSetter.swift */; };
+		90B38F0B20C995C600C4992B /* IntervalSetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90B38F0920C995C600C4992B /* IntervalSetter.xib */; };
+		90B38F0E20C99CC300C4992B /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B38F0D20C99CC300C4992B /* EventMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		904400E720C97E28009A11C1 /* TimeTracklogDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTracklogDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		904400EB20C97E28009A11C1 /* TimeTracklogDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracklogDiaryUITests.swift; sourceTree = "<group>"; };
 		904400ED20C97E28009A11C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90B38F0820C995C600C4992B /* IntervalSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSetter.swift; sourceTree = "<group>"; };
+		90B38F0920C995C600C4992B /* IntervalSetter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalSetter.xib; sourceTree = "<group>"; };
+		90B38F0D20C99CC300C4992B /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,8 @@
 		904400CB20C97E26009A11C1 /* TimeTracklogDiary */ = {
 			isa = PBXGroup;
 			children = (
+				90B38F0C20C99CAB00C4992B /* Utils */,
+				90B38F0420C9953000C4992B /* Screens */,
 				904400CC20C97E26009A11C1 /* AppDelegate.swift */,
 				904400D120C97E27009A11C1 /* Assets.xcassets */,
 				904400D320C97E27009A11C1 /* MainMenu.xib */,
@@ -122,6 +130,31 @@
 				904400ED20C97E28009A11C1 /* Info.plist */,
 			);
 			path = TimeTracklogDiaryUITests;
+			sourceTree = "<group>";
+		};
+		90B38F0420C9953000C4992B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				90B38F0520C9953800C4992B /* IntervalSetter */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		90B38F0520C9953800C4992B /* IntervalSetter */ = {
+			isa = PBXGroup;
+			children = (
+				90B38F0820C995C600C4992B /* IntervalSetter.swift */,
+				90B38F0920C995C600C4992B /* IntervalSetter.xib */,
+			);
+			path = IntervalSetter;
+			sourceTree = "<group>";
+		};
+		90B38F0C20C99CAB00C4992B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				90B38F0D20C99CC300C4992B /* EventMonitor.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +263,7 @@
 			files = (
 				904400D220C97E27009A11C1 /* Assets.xcassets in Resources */,
 				904400D520C97E27009A11C1 /* MainMenu.xib in Resources */,
+				90B38F0B20C995C600C4992B /* IntervalSetter.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				904400CD20C97E26009A11C1 /* AppDelegate.swift in Sources */,
+				90B38F0A20C995C600C4992B /* IntervalSetter.swift in Sources */,
 				904400D020C97E26009A11C1 /* TimeTracklogDiary.xcdatamodeld in Sources */,
+				90B38F0E20C99CC300C4992B /* EventMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

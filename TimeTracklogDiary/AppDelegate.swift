@@ -12,10 +12,42 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-
-
+    
+    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
+    let popover = NSPopover()
+    var eventMonitor: EventMonitor?
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        if let button = self.statusItem.button {
+            button.image = NSImage(named: NSImage.Name("Diary"));
+            button.action = #selector(togglePopover(_:))
+        }
+        self.popover.contentViewController = IntervalSetter()
+        self.eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
+            if let strongSelf = self, strongSelf.popover.isShown {
+                strongSelf.closePopover(sender: event)
+            }
+        }
+    }
+    
+    @objc func togglePopover(_ sender: Any?) {
+        if self.popover.isShown {
+            closePopover(sender: sender)
+        } else {
+            showPopover(sender: sender)
+        }
+    }
+    
+    func showPopover(sender: Any?) {
+        if let button = self.statusItem.button {
+            self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            eventMonitor?.start()
+        }
+    }
+    
+    func closePopover(sender: Any?) {
+        popover.performClose(sender)
+        eventMonitor?.stop()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
