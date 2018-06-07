@@ -7,6 +7,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="IntervalSetter" customModule="TimeTracklogDiary" customModuleProvider="target">
             <connections>
+                <outlet property="lblLeftTime" destination="8KE-AM-ggh" id="wTb-90-doW"/>
+                <outlet property="tfRestInterval" destination="4v5-Qp-qey" id="HQC-EO-juI"/>
+                <outlet property="tfWorkInterval" destination="oCU-gW-l2U" id="2eW-Ay-RxS"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -59,6 +62,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="onBtnSetInterval:" target="-2" id="4wx-PD-urf"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gab-oK-uMI">
                     <rect key="frame" x="195" y="19" width="71" height="19"/>
@@ -67,6 +73,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="onBtnTerminate:" target="-2" id="qQO-pP-OjP"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FnR-A0-nuz">
                     <rect key="frame" x="22" y="78" width="61" height="17"/>
