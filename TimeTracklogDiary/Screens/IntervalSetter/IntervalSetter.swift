@@ -22,7 +22,23 @@ class IntervalSetter: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        if (UserDefaults.standard.integer(forKey: Constants.UDWorkInterval) == 0) {
+            self.workIntervalSeconds = Constants.defaultWorkIntervalSeconds
+        } else {
+            self.workIntervalSeconds =  UserDefaults.standard.integer(forKey: Constants.UDWorkInterval)
+        }
+        
+        if (UserDefaults.standard.integer(forKey: Constants.UDRestInterval) == 0) {
+            self.restIntervalSeconds = Constants.defaultRestIntervalSeconds
+        } else {
+            self.restIntervalSeconds =  UserDefaults.standard.integer(forKey: Constants.UDRestInterval)
+        }
+        
+        self.tfWorkInterval.intValue = Int32(self.workIntervalSeconds!/Constants.secondsInMinute)
+        self.tfRestInterval.intValue = Int32(self.restIntervalSeconds!/Constants.secondsInMinute)
+        
+        self.startTimer()
     }
     
     func startTimer() {
@@ -53,8 +69,10 @@ class IntervalSetter: NSViewController {
     }
     
     @IBAction func onBtnSetInterval(_ sender: Any) {
-        self.workIntervalSeconds = Int(self.tfWorkInterval!.intValue)
-        self.restIntervalSeconds = Int(self.tfRestInterval!.intValue)
+        self.workIntervalSeconds = Int(self.tfWorkInterval!.intValue) * Constants.secondsInMinute
+        self.restIntervalSeconds = Int(self.tfRestInterval!.intValue) * Constants.secondsInMinute
+        UserDefaults.standard.set(self.workIntervalSeconds, forKey: Constants.UDWorkInterval)
+        UserDefaults.standard.set(self.restIntervalSeconds, forKey: Constants.UDRestInterval)
         self.startTimer()
     }
     

@@ -13,6 +13,7 @@
 		904400D520C97E27009A11C1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904400D320C97E27009A11C1 /* MainMenu.xib */; };
 		904400E120C97E28009A11C1 /* TimeTracklogDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904400E020C97E28009A11C1 /* TimeTracklogDiaryTests.swift */; };
 		904400EC20C97E28009A11C1 /* TimeTracklogDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904400EB20C97E28009A11C1 /* TimeTracklogDiaryUITests.swift */; };
+		90981B6C20CC4ED600DD2F74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90981B6B20CC4ED600DD2F74 /* Constants.swift */; };
 		90B38F0A20C995C600C4992B /* IntervalSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B38F0820C995C600C4992B /* IntervalSetter.swift */; };
 		90B38F0B20C995C600C4992B /* IntervalSetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90B38F0920C995C600C4992B /* IntervalSetter.xib */; };
 		90B38F0E20C99CC300C4992B /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B38F0D20C99CC300C4992B /* EventMonitor.swift */; };
@@ -49,6 +50,7 @@
 		904400E720C97E28009A11C1 /* TimeTracklogDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTracklogDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		904400EB20C97E28009A11C1 /* TimeTracklogDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracklogDiaryUITests.swift; sourceTree = "<group>"; };
 		904400ED20C97E28009A11C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90981B6B20CC4ED600DD2F74 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		90B38F0820C995C600C4992B /* IntervalSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSetter.swift; sourceTree = "<group>"; };
 		90B38F0920C995C600C4992B /* IntervalSetter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalSetter.xib; sourceTree = "<group>"; };
 		90B38F0D20C99CC300C4992B /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				904400D620C97E27009A11C1 /* Info.plist */,
 				904400D720C97E27009A11C1 /* TimeTracklogDiary.entitlements */,
 				904400CE20C97E26009A11C1 /* TimeTracklogDiary.xcdatamodeld */,
+				90981B6B20CC4ED600DD2F74 /* Constants.swift */,
 			);
 			path = TimeTracklogDiary;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90981B6C20CC4ED600DD2F74 /* Constants.swift in Sources */,
 				904400CD20C97E26009A11C1 /* AppDelegate.swift in Sources */,
 				90B38F0A20C995C600C4992B /* IntervalSetter.swift in Sources */,
 				904400D020C97E26009A11C1 /* TimeTracklogDiary.xcdatamodeld in Sources */,
