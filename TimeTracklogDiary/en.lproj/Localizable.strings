@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  TimeTracklogDiary
+
+  Created by kassergey on 6/10/18.
+  Copyright © 2018 kassergeymac. All rights reserved.
+*/
+
+//notifications
+"Work notification title" = "Work time start";
+"Rest notification title" = "Rest time start";
+
+"Work notification text" = "Please work";
+"Rest notification text" = "Please rest";

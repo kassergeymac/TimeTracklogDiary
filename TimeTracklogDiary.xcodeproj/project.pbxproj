@@ -14,6 +14,8 @@
 		904400E120C97E28009A11C1 /* TimeTracklogDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904400E020C97E28009A11C1 /* TimeTracklogDiaryTests.swift */; };
 		904400EC20C97E28009A11C1 /* TimeTracklogDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904400EB20C97E28009A11C1 /* TimeTracklogDiaryUITests.swift */; };
 		90981B6C20CC4ED600DD2F74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90981B6B20CC4ED600DD2F74 /* Constants.swift */; };
+		9099562C20CD107900F136B8 /* OnlyIntegerValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099562B20CD107900F136B8 /* OnlyIntegerValueFormatter.swift */; };
+		9099562F20CD277A00F136B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9099563120CD277A00F136B8 /* Localizable.strings */; };
 		90B38F0A20C995C600C4992B /* IntervalSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B38F0820C995C600C4992B /* IntervalSetter.swift */; };
 		90B38F0B20C995C600C4992B /* IntervalSetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90B38F0920C995C600C4992B /* IntervalSetter.xib */; };
 		90B38F0E20C99CC300C4992B /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B38F0D20C99CC300C4992B /* EventMonitor.swift */; };
@@ -51,6 +53,8 @@
 		904400EB20C97E28009A11C1 /* TimeTracklogDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracklogDiaryUITests.swift; sourceTree = "<group>"; };
 		904400ED20C97E28009A11C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90981B6B20CC4ED600DD2F74 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9099562B20CD107900F136B8 /* OnlyIntegerValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyIntegerValueFormatter.swift; sourceTree = "<group>"; };
+		9099563020CD277A00F136B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		90B38F0820C995C600C4992B /* IntervalSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSetter.swift; sourceTree = "<group>"; };
 		90B38F0920C995C600C4992B /* IntervalSetter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalSetter.xib; sourceTree = "<group>"; };
 		90B38F0D20C99CC300C4992B /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				904400D720C97E27009A11C1 /* TimeTracklogDiary.entitlements */,
 				904400CE20C97E26009A11C1 /* TimeTracklogDiary.xcdatamodeld */,
 				90981B6B20CC4ED600DD2F74 /* Constants.swift */,
+				9099563120CD277A00F136B8 /* Localizable.strings */,
 			);
 			path = TimeTracklogDiary;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				90B38F0D20C99CC300C4992B /* EventMonitor.swift */,
+				9099562B20CD107900F136B8 /* OnlyIntegerValueFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				904400D220C97E27009A11C1 /* Assets.xcassets in Resources */,
+				9099562F20CD277A00F136B8 /* Localizable.strings in Resources */,
 				904400D520C97E27009A11C1 /* MainMenu.xib in Resources */,
 				90B38F0B20C995C600C4992B /* IntervalSetter.xib in Resources */,
 			);
@@ -294,6 +301,7 @@
 				90981B6C20CC4ED600DD2F74 /* Constants.swift in Sources */,
 				904400CD20C97E26009A11C1 /* AppDelegate.swift in Sources */,
 				90B38F0A20C995C600C4992B /* IntervalSetter.swift in Sources */,
+				9099562C20CD107900F136B8 /* OnlyIntegerValueFormatter.swift in Sources */,
 				904400D020C97E26009A11C1 /* TimeTracklogDiary.xcdatamodeld in Sources */,
 				90B38F0E20C99CC300C4992B /* EventMonitor.swift in Sources */,
 			);
@@ -337,6 +345,14 @@
 				904400D420C97E27009A11C1 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		9099563120CD277A00F136B8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9099563020CD277A00F136B8 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

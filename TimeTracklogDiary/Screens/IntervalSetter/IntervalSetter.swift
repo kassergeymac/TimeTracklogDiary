@@ -17,11 +17,15 @@ class IntervalSetter: NSViewController {
     private var timer = Timer()
     
     private var workIntervalSeconds : Int?
-    private var workIntervalSecondsRest : Int?
+    private var workIntervalSecondsLeft : Int?
     private var restIntervalSeconds : Int?
+    private var restIntervalSecondsLeft : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tfWorkInterval.formatter = OnlyIntegerValueFormatter()
+        self.tfRestInterval.formatter = OnlyIntegerValueFormatter()
         
         if (UserDefaults.standard.integer(forKey: Constants.UDWorkInterval) == 0) {
             self.workIntervalSeconds = Constants.defaultWorkIntervalSeconds
@@ -38,26 +42,7 @@ class IntervalSetter: NSViewController {
         self.tfWorkInterval.intValue = Int32(self.workIntervalSeconds!/Constants.secondsInMinute)
         self.tfRestInterval.intValue = Int32(self.restIntervalSeconds!/Constants.secondsInMinute)
         
-        self.startTimer()
-    }
-    
-    func startTimer() {
-        self.workIntervalSecondsRest = self.workIntervalSeconds
-        self.timer = Timer.scheduledTimer(timeInterval: 1,
-                                          target: self,
-                                          selector: (#selector(onTick)),
-                                          userInfo: nil,
-                                          repeats: true)
-    }
-    
-    @objc
-    func onTick() {
-        self.workIntervalSecondsRest = self.workIntervalSecondsRest!-1
-        self.lblLeftTime.intValue = Int32(self.workIntervalSecondsRest!)
-        if(self.workIntervalSecondsRest==0) {
-            self.workIntervalSecondsRest = self.workIntervalSeconds
-            self.showNotificationWithTitle("Rest time start", informativeText: "Please rest")
-        }
+        self.startWorkTimer()
     }
     
     func showNotificationWithTitle(_ title: String, informativeText: String) -> Void {
@@ -73,10 +58,58 @@ class IntervalSetter: NSViewController {
         self.restIntervalSeconds = Int(self.tfRestInterval!.intValue) * Constants.secondsInMinute
         UserDefaults.standard.set(self.workIntervalSeconds, forKey: Constants.UDWorkInterval)
         UserDefaults.standard.set(self.restIntervalSeconds, forKey: Constants.UDRestInterval)
-        self.startTimer()
+        self.startWorkTimer()
     }
     
     @IBAction func onBtnTerminate(_ sender: Any) {
         NSApplication.shared.terminate(sender)
     }
+}
+
+extension IntervalSetter {
+    
+    //work timer
+    fileprivate func startWorkTimer() {
+        self.workIntervalSecondsLeft = self.workIntervalSeconds
+        self.timer = Timer.scheduledTimer(timeInterval: 1,
+                                          target: self,
+                                          selector: (#selector(onWorkTick)),
+                                          userInfo: nil,
+                                          repeats: true)
+    }
+    
+    @objc
+    func onWorkTick() {
+        self.workIntervalSecondsLeft = self.workIntervalSecondsLeft!-1
+        self.lblLeftTime.intValue = Int32(self.workIntervalSecondsLeft!)
+        if(self.workIntervalSecondsLeft==0) {
+            self.timer.invalidate()
+            self.startRestTimer()
+            self.showNotificationWithTitle(NSLocalizedString("Work notification title", comment: ""),
+                                           informativeText: NSLocalizedString("Work notification text", comment: ""))
+        }
+    }
+    
+    //rest timer
+    fileprivate func startRestTimer() {
+        self.restIntervalSecondsLeft = self.restIntervalSeconds
+        self.timer = Timer.scheduledTimer(timeInterval: 1,
+                                          target: self,
+                                          selector: (#selector(onRestTick)),
+                                          userInfo: nil,
+                                          repeats: true)
+    }
+    
+    @objc
+    func onRestTick() {
+        self.restIntervalSecondsLeft = self.restIntervalSecondsLeft!-1
+        self.lblLeftTime.intValue = Int32(self.restIntervalSecondsLeft!)
+        if(self.restIntervalSecondsLeft==0) {
+            self.timer.invalidate()
+            self.startWorkTimer()
+            self.showNotificationWithTitle(NSLocalizedString("Rest notification title", comment: ""),
+                                           informativeText: NSLocalizedString("Rest notification text", comment: ""))
+        }
+    }
+    
 }
